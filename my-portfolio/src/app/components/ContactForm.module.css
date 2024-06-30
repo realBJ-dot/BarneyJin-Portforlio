@@ -1,0 +1,33 @@
+.contactFormContainer {
+  background-color: #d78181;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.contactForm {
+  background-color: #bd5454;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.inputField {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.submitButton {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
