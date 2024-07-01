@@ -27,3 +27,15 @@ jobs:
       run: |
         cd my-portfolio
         npm run build
+        
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.email "peiyuan3@illinois.edu"
+        git config --global user.name "realbdotjdot"
+        git checkout --orphan gh-pages
+        git rm -rf .
+        mv build/* .
+        rm -rf build
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+        git push -f origin gh-pages
