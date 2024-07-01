@@ -2,7 +2,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css'; // Import your global CSS
 
-function MyApp({ Component, pageProps }) {
+import type { AppProps } from 'next/app';
+
+
+function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
 
