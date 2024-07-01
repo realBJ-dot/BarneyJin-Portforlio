@@ -32,7 +32,7 @@ jobs:
       run: |
         cd my-portfolio
         git config --global user.email "peiyuan3@illinois.edu"
-        git config --global user.name "realbdotjdot"
+        git config --global user.name "realbj-dot"
         git checkout --orphan gh-pages
         git rm -rf .
         
