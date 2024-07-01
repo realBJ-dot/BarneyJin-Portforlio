@@ -24,7 +24,9 @@ jobs:
         npm install
 
     - name: Build Next.js application
-      run: npm run build
+      run: |
+        cd my-portfolio
+        npm run build
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
@@ -32,10 +34,16 @@ jobs:
         terraform_version: '1.0.0'
 
     - name: Terraform Init
-      run: terraform init
+      run: |
+        cd my-portfolio
+        terraform init
 
     - name: Terraform Plan
-      run: terraform plan -out=tfplan
+      run: |
+        cd my-portfolio
+        terraform plan -out=tfplan
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve tfplan
+      run: |
+        cd my-portfolio
+        terraform apply -auto-approve tfplan
