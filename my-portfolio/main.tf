@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    organization = "example-organization"
+    organization = "my-portfolio"
 
     workspaces {
-      name = "example-workspace"
+      name = "my-portfolio"
     }
   }
 }
