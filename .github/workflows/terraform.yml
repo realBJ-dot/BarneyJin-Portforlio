@@ -25,7 +25,8 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
-        cli_config_credentials_token: R5zs54uyQsXICA.atlasv1.kCzGYTkOygozLZpuQiplyzxJ4yy7TpUcxIkEQC9FxSinBgEkQFFppu9pSQT7SXEVPEo
+        cli_config_credentials_token: ${{ secrets.TERRAFORM_CLI_API_KEY }}
+
     - name: Terraform Init
       run: |
         cd my-portfolio
