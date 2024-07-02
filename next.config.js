@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-export const nextConfig = {
+module.exports = {
     basePath: "/BarneyJin-Portfolio",
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
