@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+export const nextConfig = {
     basePath: "/BarneyJin-Portfolio",
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
 };
-export default nextConfig;
+
