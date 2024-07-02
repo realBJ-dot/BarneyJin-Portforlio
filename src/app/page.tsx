@@ -6,9 +6,6 @@ import { useEffect, useState } from 'react';
 import ContactForm from "./components/ContactForm";
 
 
-
-
-
 export default function Home() {
 
   
@@ -29,12 +26,12 @@ export default function Home() {
 
       <main>
       <Container style={{display: 'flex', justifyContent: 'center', padding: '30px'}}>
-        <Image
+        {/* <Image
         src="/images/profile.jpg" 
         alt="Profile Image"
         width={300}
         height={400}
-      />
+      /> */}
       </Container>
       
         
