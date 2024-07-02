@@ -19,18 +19,15 @@ jobs:
         node-version: '18.x'
 
     - name: Install dependencies
-      run: |
-        cd my-portfolio
+      run:
         npm install
 
     - name: Build Next.js application
-      run: |
-        cd my-portfolio
+      run:
         npm run build
 
     - name: Deploy to GitHub Pages
       run: |
-        cd my-portfolio
         git config --global user.email "peiyuan3@illinois.edu"
         git config --global user.name "realbj-dot"
         git checkout --orphan gh-pages
