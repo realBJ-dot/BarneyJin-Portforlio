@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -7,11 +7,10 @@ import Footer from './components/Footer';
 import Jokes from './components/Jokes';
 
 export default function Home() {
-
   return (
     <Container fluid="md">
-      <Row className="align-items-center my-5">
-        <Col md={8} lg={8} className="d-flex align-items-center" style={{marginTop:'150px'}}>
+      <Row className="align-items-center my-5" style={{ marginTop: '100px' }}>
+        <Col md={8} lg={8} className="d-flex align-items-center">
           <div>
             <h1 className="display-4 font-weight-bold">
               Hey there! I am Peiyuan (Barney) Jin
@@ -35,15 +34,10 @@ export default function Home() {
                   <Image src="/BarneyJin-Portfolio/resume.png" alt="resume" width={30} height={30} />
                 </Link>
               </Col>
-              
-
             </Row>
-                      
-            <Jokes/>
-        
           </div>
         </Col>
-        <Col md={4} lg={4} className="d-flex align-items-center" style={{marginTop:'150px'}}>
+        <Col md={4} lg={4} className="d-flex align-items-center">
           <Image
             src="/BarneyJin-Portfolio/images/profile.png"
             alt="Peiyuan Jin"
@@ -52,19 +46,23 @@ export default function Home() {
             layout="responsive"
             className="rounded-circle"
           />
-        </Col>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+        </Col>
       </Row>
       <Row className="my-5">
-        <Col style={{marginTop:'80px'}}>
-        <div className='scrollDownArrow'>
-            <span>⇩</span>
-            </div>
-          <h2 className="text-center mb-4" style={{opacity: 0}}>My Experiences   🔽</h2>
-          <ExperienceTimeline/>
+        <Col>
+          <Jokes />
         </Col>
-        
       </Row>
-      <Footer/>
+      <Row className="my-5">
+        <Col>
+          <div className='scrollDownArrow'>
+            <span>⇩</span>
+          </div>
+          <h2 className="text-center mb-4" style={{ opacity: 0 }}>My Experiences 🔽</h2>
+          <ExperienceTimeline />
+        </Col>
+      </Row>
+      <Footer />
     </Container>
   );
 }
