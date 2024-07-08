@@ -10,24 +10,24 @@ interface Joke {
 }
 
 const Jokes: React.FC = () => {
-  const [joke, setJoke] = useState<Joke | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  const fetchJoke = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get('/BarneyJin-Portfolio/api/jokes');
-      setJoke(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching joke:', error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchJoke();
-  }, []);
+    const [joke, setJoke] = useState<Joke | null>(null);
+    const [loading, setLoading] = useState(true);
+  
+    const fetchJoke = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('https://v2.jokeapi.dev/joke/Programming');
+        setJoke(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching joke:', error);
+        setLoading(false);
+      }
+    };
+  
+    useEffect(() => {
+      fetchJoke();
+    }, []);
 
   return (
     <Container>
