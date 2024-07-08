@@ -1,12 +1,13 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import Footer from './components/Footer';
-
+import Jokes from './components/Jokes';
 
 export default function Home() {
+
   return (
     <Container fluid="md">
       <Row className="align-items-center my-5">
@@ -34,7 +35,12 @@ export default function Home() {
                   <Image src="/BarneyJin-Portfolio/resume.png" alt="resume" width={30} height={30} />
                 </Link>
               </Col>
+              
+
             </Row>
+                      
+            <Jokes/>
+        
           </div>
         </Col>
         <Col md={4} lg={4} className="d-flex align-items-center" style={{marginTop:'150px'}}>
@@ -46,7 +52,7 @@ export default function Home() {
             layout="responsive"
             className="rounded-circle"
           />
-        </Col>
+        </Col>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
       </Row>
       <Row className="my-5">
         <Col style={{marginTop:'80px'}}>
