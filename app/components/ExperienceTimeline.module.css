@@ -24,10 +24,12 @@
 
 .timelineItem:nth-child(odd) {
     grid-column: 1;
+    grid-row: auto ; /* Make odd items span two rows */
 }
 
 .timelineItem:nth-child(even) {
     grid-column: 2;
+    grid-row: auto ; /* Make even items span two rows */
 }
 
 .timelineItemInView {
@@ -144,13 +146,8 @@
     color: rgba(255, 255, 255, 1);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .timeline {
-        grid-template-columns: 1fr; /* Single column layout on small screens */
-    }
-
-    .timelineItem:nth-child(odd), .timelineItem:nth-child(even) {
-        grid-column: 1; /* All items span full width on small screens */
-    }
+.icon {
+    width: auto;  /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space between icon and title */
 }

@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import Footer from './components/Footer';
 import Jokes from './components/Jokes';
+import PhotoGallery from './components/PhotoGallery';
 
 export default function Home() {
   return (
@@ -62,6 +63,7 @@ export default function Home() {
           <ExperienceTimeline />
         </Col>
       </Row>
+  
       <Footer />
     </Container>
   );
