@@ -1,11 +1,13 @@
-'use client'
+'use client';
 import React, { useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from './ExperienceTimeline.module.css';
+import Image from 'next/image';
 
 const experiences = [
     {
         title: 'Master of Computer Science, UIUC',
+        icon: 'https://media.licdn.com/dms/image/C4E0BAQGFFDl_Z9pIAA/company-logo_200_200/0/1630611684443/university_of_illinois_at_urbana_champaign_logo?e=1728518400&v=beta&t=Jejjbjs4moP5O0z3kbrpSH5k8hcjyvmO8dc2gEXjZI0', // Add the icon path here
         duration: '(Spring 2024 --- present)',
         description: (
             <>
@@ -24,7 +26,8 @@ const experiences = [
         ),
     },
     {
-        title: 'Software Development Engineer, John Deere',
+        title: 'Software Development Engineer, John Deere 👨‍💻',
+        icon: '/BarneyJin-Portfolio/images/John_Deere.png',  // Add the icon path here
         duration: '(Summer 2022 -- Spring 2024)',
         description: (
             <>
@@ -51,7 +54,8 @@ const experiences = [
           ),
     },
     {
-        title: 'Bachelor of Science, Mathematics and Computer Science, UIUC',
+        title: 'Bachelor of Science, Mathematics and Computer Science, UIUC 🧑‍🎓',
+        icon: 'https://media.licdn.com/dms/image/C4E0BAQGFFDl_Z9pIAA/company-logo_200_200/0/1630611684443/university_of_illinois_at_urbana_champaign_logo?e=1728518400&v=beta&t=Jejjbjs4moP5O0z3kbrpSH5k8hcjyvmO8dc2gEXjZI0',  // Add the icon path here
         duration: '(Fall 2019 --- Summer 2023)',
         description: (
             <>
@@ -66,6 +70,7 @@ const experiences = [
     },
     {
         title: 'Data Analyst Intern, O2Micro International Limited',
+        icon: 'http://www.o2micro.com/images/logo_h.png',  // Add the icon path here
         duration: '(Summer 2021 --- Fall 2021)',
         description: (
             <>
@@ -77,49 +82,50 @@ const experiences = [
 ];
 
 const ExperienceTimeline: React.FC = () => {
-  const timelineRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const updateVisibility = () => {
-      const timelineItems = timelineRef.current?.getElementsByClassName(styles.timelineItem);
-      if (timelineItems) {
-        Array.from(timelineItems).forEach((item) => {
-          if (item.getBoundingClientRect().top < window.innerHeight) {
-            item.classList.add(styles.timelineItemInView);
-          } else {
-            item.classList.remove(styles.timelineItemInView);
-          }
-        });
-      }
-    };
-
-    updateVisibility(); // Call on mount to update visibility
-    window.addEventListener('scroll', updateVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', updateVisibility);
-    };
-  }, []);
-
-  return (
-    <Container className={styles.timelineContainer} ref={timelineRef}>
-      <Row className="justify-content-center">
-        <Col md={12}>
-          <div className={styles.timeline}>
-            {experiences.map((exp, index) => (
-              <div className={styles.timelineItem} key={index}>
-                <div className={styles.timelineContent}>
-                  <h3>{exp.title}</h3>
-                  <p style={{fontStyle: 'italic'}}>{exp.duration}</p>
-                  {exp.description}
+    const timelineRef = useRef<HTMLDivElement>(null);
+  
+    useEffect(() => {
+      const updateVisibility = () => {
+        const timelineItems = timelineRef.current?.getElementsByClassName(styles.timelineItem);
+        if (timelineItems) {
+          Array.from(timelineItems).forEach((item) => {
+            if (item.getBoundingClientRect().top < window.innerHeight) {
+              item.classList.add(styles.timelineItemInView);
+            } else {
+              item.classList.remove(styles.timelineItemInView);
+            }
+          });
+        }
+      };
+  
+      updateVisibility(); // Call on mount to update visibility
+      window.addEventListener('scroll', updateVisibility);
+  
+      return () => {
+        window.removeEventListener('scroll', updateVisibility);
+      };
+    }, []);
+  
+    return (
+      <Container className={styles.timelineContainer} ref={timelineRef}>
+        <Row className="justify-content-center">
+          <Col md={12}>
+            <div className={styles.timeline}>
+              {experiences.map((exp, index) => (
+                <div className={styles.timelineItem} key={index}>
+                  <div className={styles.timelineContent}>
+                    {exp.icon && <Image src={exp.icon} alt={`${exp.title} icon`} className={styles.icon} width={50} height={50} />}
+                    <h3>{exp.title}</h3>
+                    <p style={{fontStyle: 'italic'}}>{exp.duration}</p>
+                    {exp.description}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
-
-export default ExperienceTimeline;
+              ))}
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    );
+  };
+  
+  export default ExperienceTimeline;
