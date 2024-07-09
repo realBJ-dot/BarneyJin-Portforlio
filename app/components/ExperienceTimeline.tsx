@@ -70,7 +70,7 @@ const experiences = [
     },
     {
         title: 'Data Analyst Intern, O2Micro International Limited',
-        icon: 'http://www.o2micro.com/images/logo_h.png',  // Add the icon path here
+        icon: '/BarneyJin-Portfolio/images/O2Micro.png',  // Add the icon path here
         duration: '(Summer 2021 --- Fall 2021)',
         description: (
             <>
