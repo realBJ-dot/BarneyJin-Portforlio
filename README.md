@@ -1,2 +1,2 @@
 # BarneyJin-Portfolio
-This is my website! Why is this website only showing readme???2
+Welcome! Please do take a look.
