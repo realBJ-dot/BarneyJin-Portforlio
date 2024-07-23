@@ -75,7 +75,6 @@ const experiences = [
         description: (
             <>
             <span className={styles['skill-label']}>Principal Component Analysis</span>  <br/>
-            
             </>
         )
     },
