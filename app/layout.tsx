@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <title>Barney</title>
       <body>
+
         <div className="background">
           <div className="overlay">
             {children}

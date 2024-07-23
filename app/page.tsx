@@ -5,11 +5,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import Footer from './components/Footer';
 import Jokes from './components/Jokes';
-import PhotoGallery from './components/PhotoGallery';
+import Head from 'next/head'
+
 
 export default function Home() {
   return (
     <Container fluid="md">
+      
+      
+      
       <Row className="align-items-center my-5" style={{ marginTop: '100px' }}>
         <Col md={8} lg={8} className="d-flex align-items-center">
           <div>
